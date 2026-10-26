@@ -1,14 +1,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Jaro:opsz@6..72&display=swap');
 
-body{
+body {
     margin: 0;
     background-color: #f3f3f3;
     font-family: 'Jaro';
 }
 
-header{
+header {
+    position: relative;
     width: 100%;
     height: 65px;
+    background-image: url('./img/FondoHeader.jpg');
+    background-repeat: repeat;
+    background-size: 30px;
+    z-index: 20;
+}
+
+.header-deco{
+    position: absolute;
+    top: 65px;
+    width: 100%;
+    height: 30px;
+    background-image: url('./img/TileKirby.png');
+    background-repeat: repeat;
+    background-size: 30px;
 }
 
 img {
@@ -31,7 +46,7 @@ img {
     z-index: 1;
     background-image: url('img/FondoAzul.jpg');
     background-repeat: repeat;
-    background-size: auto;
+    background-size: 64px;
     top: 0;
     left: 0;
     width: 100%;
@@ -45,8 +60,10 @@ img {
     z-index: 2;
     width: 100%;
     height: 100%;
+    filter: saturate(50%);
 }
-#layerBg img{
+
+#layerBg img {
     position: absolute;
     left: 0;
     bottom: -30%;
@@ -57,18 +74,19 @@ img {
 #layer2 {
     position: absolute;
     z-index: 3;
-    bottom: -160px;
+    bottom: -140px;
     width: 100%;
     height: 100%;
     transition: .3s;
 }
 
-.L{
+.L {
     position: absolute;
     bottom: 0;
     left: 0;
 }
-.R{
+
+.R {
     position: absolute;
     bottom: 0;
     right: 0;
@@ -92,7 +110,7 @@ img {
     display: flex;
     justify-content: center;
     z-index: 5;
-    bottom: -170px;
+    bottom: -150px;
     width: 100%;
     height: 25%;
     transition: .3s;
@@ -109,7 +127,7 @@ img {
     position: absolute;
     z-index: 6;
     bottom: 0;
-    left: 0;
+    left: -30px;
     width: 100%;
     height: 25%;
     transition: .3s;
@@ -125,6 +143,26 @@ img {
     top: 0;
 }
 
+#personajes{
+    display: flex;
+    position: absolute;
+    top: 500px;
+    z-index: 6;
+    height: auto;
+    width: 100%;
+}
+
+#personajes .R{
+    width: 220px;
+    height: auto;
+    right: 2%;
+}
+#personajes .L{
+    width: 180px;
+    height: auto;
+    left: 4%;
+}
+
 #layer7 {
     position: absolute;
     z-index: 8;
@@ -136,7 +174,7 @@ img {
 
 #layer8 {
     position: absolute;
-    z-index: 9;
+    z-index: 5;
     width: 100%;
     height: 100%;
     transition: .3s;
@@ -145,10 +183,21 @@ img {
     align-items: center;
 }
 
-#layer8 p {
-    font-size: 8em;
-}
+#layer8 h1 {
+    font-size: 9rem;
+    letter-spacing: 0.5rem;
 
+    background-image: url('./img/FondoHeader.jpg');
+    background-size: cover;
+    background-position: center;
+
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    -webkit-text-stroke: 0.5px #F1B73A;
+}
 
 /* --- Contenido (Debajo del Parallax) --- */
 .contenido {
@@ -156,7 +205,7 @@ img {
     background-image: url('img/BackgroundTile.jpg');
     background-repeat: repeat;
     text-align: center;
-    min-height: 400px;
+    height: 1000px;
 }
 
 .random {
